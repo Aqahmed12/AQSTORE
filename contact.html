@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+    
+        label, input, textarea {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+    
+        input, textarea {
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+    
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Basic styling for navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.navbar-logo img {
+    height: 50px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+/* Basic styling for navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.navbar-logo img {
+    height: 50px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-menu a:hover {
+    color: #f39c12; /* Change this color to whatever you prefer for hover */
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff416c;
+    padding-bottom: 5px;
+}
+
+.footer-column p, .footer-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-icon {
+    margin-right: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+.footer-column p{
+    color: white
+}
+.re img {
+    width: 100%;  /* Makes the image responsive */
+    height: auto; /* Preserves the aspect ratio */
+    max-width: 100%;  /* Ensures the image doesn't exceed the container's width */
+    display: block;  /* Removes unwanted gaps at the bottom of the image */
+}
+
+@media only screen and (max-width: 600px) {
+    .re img {
+        /* Optional: Set a specific width or height for smaller screens */
+        width: 100%;
+        height: auto;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+       <!-- Navbar -->
+       <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="WLP.jpg.png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+        
+           
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <h2>Contact Us</h2>
+    
+    <form action="/submit_form" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields.");
+                event.preventDefault();  // Prevents the form from being submitted if validation fails
+            }
+        });
+        const hamburger = document.querySelector('.hamburger-menu');
+const menu = document.querySelector('.navbar-menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+    </script>
+     <footer>
+        <div class="footer-container">
+            <!-- About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>
+                    We are a leading company in providing <br>the best quality products and services to<br> our customers.
+                </p>
+            </div>
+            
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                  
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+           
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61566946911853&mibextid=ZbWKwL" class="social-icon"><img src="fb.jpg" alt="Facebook"></a>
+                    <a href="https://www.tiktok.com/@aq_store11?_t=8qG31J6TiIa&_r=1" class="social-icon"><img src="tok.jpg" alt="tiktok"></a>
+                    <a href="https://www.instagram.com/invites/contact/?igsh=1imw2ecqixd06&utm_content=olmjeju" class="social-icon"><img src="it.jpg" alt="Instagram"></a>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

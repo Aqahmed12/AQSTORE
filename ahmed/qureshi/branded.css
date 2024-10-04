@@ -1,0 +1,124 @@
+.nav{
+    background-color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    height: 100px;
+}
+ul li a{
+ 
+    list-style: none;
+    color: aliceblue;
+    text-decoration: none;
+}
+.a{
+    color: wheat;
+    background-color: black;
+    margin-top: 100px;
+  
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+h1:hover{
+    background-color: aqua;
+    color: black;
+}
+
+.h{
+    background-color: black;
+    color: wheat;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2px solid black;
+    margin-top: 100px;
+}
+
+.card-text{
+    color: red;
+    text-decoration: line-through;
+    
+}
+.card a:hover{
+    background-color: black;
+    color: gold;
+}
+.cod{
+    display: flex;
+    margin-top: 100px;
+    font-weight: bold;
+     gap: 500px;
+     margin-left: 100px;
+}
+.cad{
+    display: flex;
+    border: none;
+    margin-top: 100px;
+    font-weight: bold;
+   margin-left: 100px;
+ gap: 500px;
+}
+.card{
+    border: none;
+    border-radius: none;
+}
+.rot{
+    display: flex;
+    gap: 500px;
+    margin-top: 100px;
+    font-weight: bold;
+     margin-left: 100px;
+
+}
+.tot{
+    display: flex;
+    gap: 500px;
+    margin-top: 100px;
+    font-weight: bold;
+     margin-left: 100px;
+}
+.card a{
+    background-color: #0D7C66;
+}
+footer{
+    background-color: 
+    black;
+    color: wheat;
+}
+
+span{
+    color: red;
+}
+.card img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+    z-index: 3;}
+
+.card-title{
+    color: #FF8225;
+}
+
+h1{
+    transform: scale(1.1);
+transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

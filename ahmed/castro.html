@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQ Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #007bff;
+        }
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        .navbar ul li {
+            margin: 0 10px;
+        }
+        /* Hamburger Menu Styling */
+        .navbar .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            flex-direction: row;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+            .navbar ul li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            .navbar .menu-icon {
+                display: block;
+            }
+        }
+        .navbar ul.show {
+            display: flex;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .product-images img {
+            width: 18%;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+        .product-images img:hover {
+            transform: scale(1.1);
+        }
+        form {
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        .confirm-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .confirm-btn:hover {
+            background-color: #218838;
+        }
+        .cancel-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+        /* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduces the padding */
+    background-color: #333; /* Example background color */
+}
+
+.navbar img {
+    width: 50px; /* Adjust the width as per your need */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+#navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    #navbar-links {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+.navbar-menu li a:hover {
+    color: #ff416c; /* Highlight on hover */
+}
+
+.navbar-menu li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ff416c;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
+}
+.product-images img {
+    width: 100%;  /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Limit the maximum size */
+    object-fit: cover; /* Ensure the image covers the space properly */
+}
+
+/* For better spacing */
+.product-images a {
+    margin: 10px;
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+<img src="Screenshot 2024-10-01 023249.png" alt="">
+        <ul id="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="iner.html">About</a></li>
+         
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+    <div class="container">
+        <h2>Product Details</h2>
+
+        <div class="product-images">
+            <a href="cas.jpg.jpg" data-fancybox="gallery" data-caption=>
+                <img src="cas.jpg.jpg" alt="Product Image 1">
+            </a>
+            <a href="cas.jpg (2).jpg" data-fancybox="gallery" data-caption=>
+                <img src="cas.jpg (2).jpg" alt="Product Image 2">
+            </a>
+            <a href="cas.jpg (3).jpg" data-fancybox="gallery" data-caption=>
+                <img src="cas.jpg (3).jpg" alt="Product Image 3">
+            </a>
+            <a href="cas.jpg (4).jpg" data-fancybox="gallery" data-caption=>
+                <img src="cas.jpg (4).jpg" alt="Product Image 4">
+            </a>
+            <a href="cas.jpg (5).jpg" data-fancybox="gallery" data-caption=>
+                <img src="cas.jpg (5).jpg" alt="Product Image 5">
+            </a>
+        </div>
+        <form id="orderForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Enter your first name" required>
+        
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter your last name" required>
+        
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
+        
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Enter your city" required>
+        
+            <label for="address">Full Address</label>
+            <textarea id="address" placeholder="Enter your full address" required></textarea>
+        
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" value="CASTRO SPORT BLACK" readonly>
+        
+            <label for="totalPrice">Total Price</label>
+            <input type="text" id="totalPrice" value="2600 PKR" readonly>
+        
+            <label for="shipping">Shipping</label>
+            <input type="text" id="shipping" value="Free" readonly>
+        
+            <div class="buttons">
+                <button type="submit" class="confirm-btn">Confirm Order</button>
+            </div>
+        </form>
+        
+        
+
+    <script>
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Collect form data
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const fullName = `${firstName} ${lastName}`;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const city = document.getElementById('city').value;
+        const address = document.getElementById('address').value;
+        const productName = document.getElementById('productName').value;
+        const totalPrice = document.getElementById('totalPrice').value;
+        const shipping = document.getElementById('shipping').value;
+
+        // Format the message
+        const message = `
+            *Order Details:*
+            Full Name: ${fullName}
+            Phone: ${phoneNumber}
+            City: ${city}
+            Address: ${address}
+            Product: ${productName}
+            Total Price: ${totalPrice}
+            Shipping: ${shipping}
+        `;
+
+        // Send message to WhatsApp
+        window.open(`https://wa.me/03148512768?text=${encodeURIComponent(message)}`, '_blank');
+    });
+</script>
+
+
+      
+        
+    </script>
+      <script>
+        function toggleMenu() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('show');
+        }
+    </script>
+
+<script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: false,
+        Toolbar: {
+            display: [
+                "zoom",
+                "close",
+            ],
+        },
+    });
+</script>
+
+</body>
+</html>

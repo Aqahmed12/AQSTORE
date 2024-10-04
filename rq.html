@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQ Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #007bff;
+        }
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        .navbar ul li {
+            margin: 0 10px;
+        }
+        /* Hamburger Menu Styling */
+        .navbar .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            flex-direction: row;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+            .navbar ul li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            .navbar .menu-icon {
+                display: block;
+            }
+        }
+        .navbar ul.show {
+            display: flex;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .product-images img {
+            width: 18%;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+        .product-images img:hover {
+            transform: scale(1.1);
+        }
+        form {
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        .confirm-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .confirm-btn:hover {
+            background-color: #218838;
+        }
+        .cancel-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+        /* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduces the padding */
+    background-color: #333; /* Example background color */
+}
+
+.navbar img {
+    width: 50px; /* Adjust the width as per your need */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+#navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    #navbar-links {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+.navbar-menu li a:hover {
+    color: #ff416c; /* Highlight on hover */
+}
+
+.navbar-menu li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ff416c;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
+}
+.product-images img {
+    width: 100%;  /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Limit the maximum size */
+    object-fit: cover; /* Ensure the image covers the space properly */
+}
+
+/* For better spacing */
+.product-images a {
+    margin: 10px;
+    display: inline-block;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff416c;
+    padding-bottom: 5px;
+}
+
+.footer-column p, .footer-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-icon {
+    margin-right: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+.footer-column p{
+    color: white
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+<img src="Screenshot 2024-10-01 023249.png" alt="">
+        <ul id="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+         
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+    <div class="container">
+        <h2>Product Details</h2>
+
+        <div class="product-images">
+            <a href="qw.jpg (2).jpg" data-fancybox="gallery" data-caption=>
+                <img src="qw.jpg (2).jpg" alt="Product Image 1">
+            </a>
+            <a href="qw.jpg (3).jpg" data-fancybox="gallery" data-caption=>
+                <img src="qw.jpg (3).jpg" alt="Product Image 2">
+            </a>
+            <a href="qw.jpg (4).jpg" data-fancybox="gallery" data-caption=>
+                <img src="qw.jpg (4).jpg" alt="Product Image 3">
+            </a>
+            <a href="qw.jpg (5).jpg" data-fancybox="gallery" data-caption=>
+                <img src="qw.jpg (5).jpg" alt="Product Image 4">
+            </a>
+            <a href="qw.jpg.jpg" data-fancybox="gallery" data-caption=>
+                <img src="qw.jpg.jpg" alt="Product Image 5">
+            </a>
+        </div>
+        <form id="orderForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Enter your first name" required>
+        
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter your last name" required>
+        
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
+        
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Enter your city" required>
+        
+            <label for="address">Full Address</label>
+            <textarea id="address" placeholder="Enter your full address" required></textarea>
+        
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" value="QURTAZ PREMIUM WATCH " readonly>
+        
+            <label for="totalPrice">Total Price</label>
+            <input type="text" id="totalPrice" value="1700 PKR" readonly>
+        
+            <label for="shipping">Shipping</label>
+            <input type="text" id="shipping" value="Free" readonly>
+        
+            <div class="buttons">
+                <button type="submit" class="confirm-btn">Confirm Order</button>
+            </div>
+        </form>
+        
+        
+
+    <script>
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Collect form data
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const fullName = `${firstName} ${lastName}`;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const city = document.getElementById('city').value;
+        const address = document.getElementById('address').value;
+        const productName = document.getElementById('productName').value;
+        const totalPrice = document.getElementById('totalPrice').value;
+        const shipping = document.getElementById('shipping').value;
+
+        // Format the message
+        const message = `
+            *Order Details:*
+            Full Name: ${fullName}
+            Phone: ${phoneNumber}
+            City: ${city}
+            Address: ${address}
+            Product: ${productName}
+            Total Price: ${totalPrice}
+            Shipping: ${shipping}
+        `;
+
+        // Send message to WhatsApp
+        window.open(`https://wa.me/03148512768?text=${encodeURIComponent(message)}`, '_blank');
+    });
+</script>
+
+
+      
+        
+    </script>
+      <script>
+        function toggleMenu() {
+            const navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('show');
+        }
+    </script>
+
+<script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: false,
+        Toolbar: {
+            display: [
+                "zoom",
+                "close",
+            ],
+        },
+    });
+</script>
+<footer>
+    <div class="footer-container">
+        <!-- About Us -->
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+                We are a leading company in providing <br>the best quality products and services to<br> our customers.
+            </p>
+        </div>
+        
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+              
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61566946911853&mibextid=ZbWKwL" class="social-icon"><img src="fb.jpg" alt="Facebook"></a>
+                <a href="https://www.tiktok.com/@aq_store11?_t=8qG31J6TiIa&_r=1" class="social-icon"><img src="tok.jpg" alt="tiktok"></a>
+                <a href="https://www.instagram.com/invites/contact/?igsh=1imw2ecqixd06&utm_content=olmjeju" class="social-icon"><img src="it.jpg" alt="Instagram"></a>
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

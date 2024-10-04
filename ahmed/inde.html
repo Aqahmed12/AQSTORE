@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: calc(25% - 20px); /* Four cards per row */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .add-to-cart {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .order-form-modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .order-form-content {
+            background-color: white;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; /* Width of modal */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative; /* For close button positioning */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-grid">
+    <!-- 20 Product Cards -->
+    <div class="product-card">
+        <img src="p21.jpg" alt="Product 1">
+        <h3>Watch A</h3>
+        <h4>Rs 10000</h4>
+        <p>Rs 11500</p>
+        <button class="add-to-cart" onclick="openForm('Watch A')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p22.jpg" alt="Product 2">
+        <h3>Watch B</h3>
+        <h4>Rs 9000</h4>
+        <p>Rs 9500</p>
+        <button class="add-to-cart" onclick="openForm('Watch B')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p23.jpg" alt="Product 3">
+        <h3>Watch C</h3>
+        <h4>Rs 8500</h4>
+        <p>Rs 9750</p>
+        <button class="add-to-cart" onclick="openForm('Watch C')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p24.jpg" alt="Product 4">
+        <h3>Watch D</h3>
+        <h4>Rs 7500</h4>
+        <p>Rs 9000</p>
+        <button class="add-to-cart" onclick="openForm('Watch D')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p5.jpg" alt="Product 5">
+        <h3>Watch E</h3>
+        <h4>Rs 12500</h4>
+        <p>Rs 14000</p>
+        <button class="add-to-cart" onclick="openForm('Watch E')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p6.jpg" alt="Product 6">
+        <h3>Watch F</h3>
+        <h4>Rs 11500</h4>
+        <p>Rs 13000</p>
+        <button class="add-to-cart" onclick="openForm('Watch F')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p7.jpg" alt="Product 7">
+        <h3>Watch G</h3>
+        <h4>Rs 14000</h4>
+        <p>Rs 16500</p>
+        <button class="add-to-cart" onclick="openForm('Watch G')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p8.jpg" alt="Product 8">
+        <h3>Watch H</h3>
+        <h4>Rs 9500</h4>
+        <p>Rs 11000</p>
+        <button class="add-to-cart" onclick="openForm('Watch H')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p9.jpg" alt="Product 9">
+        <h3>Watch I</h3>
+        <h4>Rs 8900</h4>
+        <p>Rs 10000</p>
+        <button class="add-to-cart" onclick="openForm('Watch I')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p23.jpg" alt="Product 10">
+        <h3>Watch J</h3>
+        <h4>Rs 7800</h4>
+        <p>Rs 9500</p>
+        <button class="add-to-cart" onclick="openForm('Watch J')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p11.jpg" alt="Product 11">
+        <h3>Watch K</h3>
+        <h4>Rs 18000</h4>
+        <p>Rs 19800</p>
+        <button class="add-to-cart" onclick="openForm('Watch K')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p12.jpg" alt="Product 12">
+        <h3>Watch L</h3>
+        <h4>Rs 8900</h4>
+        <p>Rs 11520</p>
+        <button class="add-to-cart" onclick="openForm('Watch L')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p13.jpg" alt="Product 13">
+        <h3>Watch M</h3>
+        <h4>Rs 6500</h4>
+        <p>Rs 8700</p>
+        <button class="add-to-cart" onclick="openForm('Watch M')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p14.jpg" alt="Product 14">
+        <h3>Watch N</h3>
+        <h4>Rs 7800</h4>
+        <p>Rs 9000</p>
+        <button class="add-to-cart" onclick="openForm('Watch N')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p15.jpg" alt="Product 15">
+        <h3>Watch O</h3>
+        <h4>Rs 6900</h4>
+        <p>Rs 7700</p>
+        <button class="add-to-cart" onclick="openForm('Watch O')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p16.jpg" alt="Product 16">
+        <h3>Watch P</h3>
+        <h4>Rs 5200</h4>
+        <p>Rs 7100</p>
+        <button class="add-to-cart" onclick="openForm('Watch P')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p17.jpg" alt="Product 17">
+        <h3>Watch Q</h3>
+        <h4>Rs 4900</h4>
+        <p>Rs 6000</p>
+        <button class="add-to-cart" onclick="openForm('Watch Q')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p18.jpg" alt="Product 18">
+        <h3>Watch R</h3>
+        <h4>Rs 5900</h4>
+        <p>Rs 6900</p>
+        <button class="add-to-cart" onclick="openForm('Watch R')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p19.jpg" alt="Product 19">
+        <h3>Watch S</h3>
+        <h4>Rs 4500</h4>
+        <p>Rs 6000</p>
+        <button class="add-to-cart" onclick="openForm('Watch S')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="p21.jpg" alt="Product 20">
+        <h3>Watch T</h3>
+        <h4>Rs 5900</h4>
+        <p>Rs 6590</p>
+        <button class="add-to-cart" onclick="openForm('Watch T')">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Order Form Modal -->
+<div class="order-form-modal" id="orderForm">
+    <div class="order-form-content">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <h2>Order Form</h2>
+        <form id="orderFormDetails">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="address">Full Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="product">Product</label>
+            <input type="text" id="product" name="product" readonly>
+
+            <button type="submit">Confirm Order</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openForm(productName) {
+        document.getElementById("orderForm").style.display = "block";
+        document.getElementById("product").value = productName; // Set product name in the form
+    }
+
+    function closeForm() {
+        document.getElementById("orderForm").style.display = "none";
+        document.getElementById("orderFormDetails").reset(); // Reset form fields
+    }
+
+    // Close the modal if the user clicks outside of the modal
+    window.onclick = function(event) {
+        var modal = document.getElementById("orderForm");
+        if (event.target === modal) {
+            closeForm();
+        }
+    }
+</script>
+
+</body>
+</html>
