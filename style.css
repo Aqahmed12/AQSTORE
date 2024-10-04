@@ -642,3 +642,10 @@ footer {
     font-variation-settings:
       "wdth" 100;
 }
+.aq{
+    background-color: #333;
+    color: #ccc;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
